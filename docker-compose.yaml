@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: simple-orders-backend
+    build: ./back-end
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./back-end/.env
+    depends_on:
+      - mongo
+    volumes:
+      - ./back-end:/app
+      - /app/node_modules
+    restart: always
+    command: npm run dev
+
+  frontend:
+    container_name: simple-orders-frontend
+    build: ./front-end
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./front-end:/app
+      - /app/node_modules
+    restart: always
+    command: npm run dev
+    environment:
+      - VITE_BACKEND_URL=http://backend:3000
+    depends_on:
+      - backend
+
+  mongo:
+    container_name: simple-orders-mongo
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    restart: always
+
+volumes:
+  mongo_data:
