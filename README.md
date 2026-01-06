@@ -1,5 +1,3 @@
-# News API with RabbitMQ & Elasticsearch
-
 ## Overview
 
 This project is a Simple Orders Management App with a React frontend and Node.js backend. Users can select products, manage quantities, and place orders. The backend uses MongoDB for data storage.
