@@ -4,9 +4,11 @@ import Dashboard from "@/page/workspace/Dashboard";
 import AccountSetting from "@/page/setting/Account-setting";
 import HistoryOrder from "@/page/historyorder/HistoryOrder";
 import Product from "@/page/product/Product";
+import SignUp from "@/page/auth/Sign-up";
 
 export const authenticationRoutePaths = [
   { path: AUTH_ROUTES.SIGN_IN, element: <SignIn /> },
+  { path: AUTH_ROUTES.SIGN_UP, element: <SignUp /> },
 ];
 
 export const protectedRoutePaths = [

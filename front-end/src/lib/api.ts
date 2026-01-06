@@ -1,4 +1,4 @@
-import type { AllOrderPayloadType, AllOrderResponseType, AllProductPayloadType, AllProductResponseType, CreateProductPayloadType, CurrentUserResponseType, EditProductPayloadType, LoginResponseType, loginType } from "@/types/api.type";
+import type { AllOrderPayloadType, AllOrderResponseType, AllProductPayloadType, AllProductResponseType, CreateProductPayloadType, CurrentUserResponseType, EditProductPayloadType, LoginResponseType, loginType, registerType } from "@/types/api.type";
 import API from "./axios-client";
 
 
@@ -92,3 +92,6 @@ export const getAllOrderQueryFn = async ({
   const response = await API.get(url);
   return response.data;
 };
+
+export const registerMutationFn = async (data: registerType) =>
+  await API.post("/auth/register", data);

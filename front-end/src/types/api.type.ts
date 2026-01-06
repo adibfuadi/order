@@ -86,3 +86,9 @@ export type EditProductPayloadType = {
     stock: number;
   };
 };
+
+export type registerType = {
+  name: string;
+  email: string;
+  password: string;
+};
