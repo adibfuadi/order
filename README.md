@@ -13,7 +13,6 @@ This project is a Simple Orders Management App with a React frontend and Node.js
 
 API service for CRUD news and Post News
 
-Controllers
 Controllers handle HTTP requests and responses
 Call services to perform business logic
 Handle validation with Zod and authentication with middleware
@@ -22,13 +21,11 @@ Example:
 createProductController → calls createProductService
 createOrderController → calls createOrderService
 
-Service
 Services contain business logic, independent of Express
 Examples:
 createProductService → create a new product
 MongoDB transactions can be handled via sessions
 
-Model
 Mongoose models define schemas and types:
 UserModel → email, password, name
 ProductModel → name, price, stock, createdBy
@@ -36,7 +33,6 @@ OrderModel → user, totalAmount
 DetailOrderModel → order, product, quantity, price
 Pre-save hooks can be used (e.g., hash password before saving)
 
-Validation
 Zod is used for request validation and transformation
 Frontend also uses Zod + React Hook Form for type-safe validation
 
